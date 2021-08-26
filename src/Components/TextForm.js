@@ -11,14 +11,15 @@ export default function TextForm(props) {
     let newText2 = text.toLowerCase();
     setText(newText2);
   };
+  const handleClear = () => {
+    let newText = "";
+    setText(newText);
+  };
   const handleOnChange = (event) => {
-    // console.log("On Change");
     setText(event.target.value);
-    // alert("clicked")
   };
   const [text, setText] = useState("");
   //   const [text, setText] = useState("Enter your text");
-  // setText("helloooooo"); correct way to change the state of variable
   return (
     <>
       <div className="container my-3">
@@ -31,15 +32,27 @@ export default function TextForm(props) {
             placeholder="Enter Text Here"
             autoComplete="off"
             id="mybox"
-            rows="12"
+            rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button className="btn btn-outline-primary " onClick={handleUpClick}>
           Convert to Uppercase
         </button> 
-        <button className="btn btn-secondary" onClick={handleLowClick}>
+        <button className="btn btn-outline-primary mx-2" onClick={handleLowClick}>
            Convert to Lowercase
+        </button> 
+        <button className="btn btn-outline-danger" onClick={handleClear}>
+          Clear Text
         </button>
+
+      <div className="container my-4">
+        <h2>Your Text Summmary</h2>
+        <p> <b> {text.split(" ").length} </b> words and <b>  {text.length} </b> characters </p> <hr />
+        <p>It will take <b> {0.008*text.split(" ").length} </b> minute(s) to read.</p> <hr />
+      </div>
+
+      <h3> Preview</h3>
+      <p>{text}</p>
       </div>
     </>
   );
