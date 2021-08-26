@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       
       <Navbar title="Text-Utils" about="About Us" />
       <TextForm heading="Enter the text to analyze" />
-
+      <Footer />
     </>
   );
 }
