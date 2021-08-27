@@ -9,11 +9,11 @@ export default function Footer() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            position : "relative",
-            bottom:"-8vh"
+            margin: "100px 0px 0px 0px",
           }}
         >
-          All left Rights Reserved &copy; | T&C
+          All Rights Reserved &copy;
+          <a href="https://github.com/Vivek3072"> Vivek Srivastava </a> T&C
         </footer>
       </div>
     </>
