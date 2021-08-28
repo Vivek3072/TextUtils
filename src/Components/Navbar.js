@@ -8,7 +8,7 @@ export default function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <a href="/" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img
               className="mx-2"
               style={{ width: "38px" }}
@@ -16,7 +16,7 @@ export default function Navbar() {
               alt="appLogo"
             />
             Text-Utils
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
