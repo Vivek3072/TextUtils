@@ -1,0 +1,26 @@
+.animeLogo {
+  width: 150px;
+  animation: animateLogo 4s ease-in-out infinite alternate;
+}
+
+@keyframes animateLogo {
+  from {
+    width: 25%;
+  }
+  to {
+    width: 45%;
+  }
+}
+
+.contactLeft {
+  height: 28vh;
+}
+
+@media only screen and (min-width:375px) {
+    .contactLeft{
+        display: "flex";
+        justify-content : "center";
+        align-items : "center";
+        padding: 10px 0px;
+    }
+}

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import myLogo from "../myLogo.png";
 import { Link } from "react-router-dom";
 
-export default function Navbar(props) {
+export default function Navbar() {
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -15,7 +15,7 @@ export default function Navbar(props) {
               src={myLogo}
               alt="appLogo"
             />
-            {props.title}
+            Text-Utils
           </a>
           <button
             className="navbar-toggler"
@@ -37,12 +37,12 @@ export default function Navbar(props) {
               </li>
               <li className="nav-item">
                 <Link to="/About" className="nav-link">
-                  {props.about}
+                About  
                 </Link>
               </li>
               <li className="nav-item">
                 <Link to="/Contact" className="nav-link">
-                  Contact Us
+                  Contact
                 </Link>
               </li>
             </ul>

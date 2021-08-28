@@ -9,11 +9,11 @@ import Contact from "./Components/Contact";
 function App() {
   return (
     <>
-      <Navbar title="Text-Utils" about="About Us" />
+      <Navbar />
       
       <Switch>
       <Route exact path="/" component={TextForm} />
-      <Route  path="/TextForm" component={TextForm} />
+      <Route  path="/TextUtils" component={TextForm} />
       <Route  path="/About" component={About} />
       <Route  path="/Contact" component={Contact} />
       </Switch>
