@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Components/Navbar";
 import TextForm from "./Components/TextForm";
 import Footer from "./Components/Footer";
@@ -7,18 +7,35 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 
 function App() {
+  const [mode, setMode] = useState("light");
+  const handleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+      document.body.style.backgroundColor = "#36454F";
+    } else {
+      setMode("light");
+      document.body.style.backgroundColor = "#FFFFFF";
+    }
+  };
+
   return (
     <>
-      <Navbar />
-      
+      <Navbar mode={mode} handleMode={handleMode} />
+
       <Switch>
-      <Route exact path="/" component={TextForm} />
-      <Route  path="/TextUtils" component={TextForm} />
-      <Route  path="/About" component={About} />
-      <Route  path="/Contact" component={Contact} />
+        <Route exact path="/">
+          <TextForm mode={mode} />
+        </Route>
+        <Route path="/TextUtils" component={TextForm} />
+        <Route path="/About">
+          <About mode={mode} />
+        </Route>
+        <Route path="/Contact">
+          <Contact mode={mode} />
+        </Route>
       </Switch>
 
-      <Footer />
+      <Footer mode={mode} />
     </>
   );
 }

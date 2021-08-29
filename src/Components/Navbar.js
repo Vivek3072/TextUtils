@@ -1,18 +1,33 @@
 import React from "react";
 import PropTypes from "prop-types";
 import myLogo from "../myLogo.png";
+import darkLogo from "../darkLogo.png";
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav
+        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+      >
         <div className="container-fluid">
           <Link to="/" className="navbar-brand">
             <img
               className="mx-2"
-              style={{ width: "38px" }}
+              style={{
+                width: "38px",
+                display: props.mode === "dark" ? "" : "none",
+              }}
               src={myLogo}
+              alt="appLogo"
+            />
+            <img
+              className="mx-2"
+              style={{
+                width: "38px",
+                display: props.mode === "light" ? "" : "none",
+              }}
+              src={darkLogo}
               alt="appLogo"
             />
             Text-Utils
@@ -37,7 +52,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <Link to="/About" className="nav-link">
-                About  
+                  About
                 </Link>
               </li>
               <li className="nav-item">
@@ -46,6 +61,24 @@ export default function Navbar() {
                 </Link>
               </li>
             </ul>
+            <div
+              className={`form-check form-switch text-${
+                props.mode === "light" ? "dark" : "light"
+              }`}
+            >
+              <input
+                className="form-check-input"
+                onClick={props.handleMode}
+                type="checkbox"
+                id="flexSwitchCheckDefault"
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+              >
+                Dark Mode
+              </label>
+            </div>
           </div>
         </div>
       </nav>

@@ -1,42 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import darkLogo from "../darkLogo.png";
 import myLogo from "../myLogo.png";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-    padding: "20px",
-  });
-  const [darkBtn, setDarkBtn] = useState("Dark Mode");
-  const handleDark = () => {
-    if (myStyle.color === "black") {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "grey",
-        padding: "20px",
-      });
-      setDarkBtn("Light Mode");
-    } else {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-        padding: "20px",
-      });
-      setDarkBtn("Dark Mode");
-    }
-  };
+export default function About(props) {
 
   return (
     <>
-      <div className="container-fluid my-4" style={myStyle}>
+      <div className= {`container-fluid my-4 text-${props.mode === "light" ? "dark" : "white"}`}>
         <h1>
           <img
             src={darkLogo}
             className="mx-3"
             style={{
               width: "80px",
-              display: myStyle.color === "black" ? "" : "none",
+              display: props.mode === "light" ? "" : "none",
             }}
             alt="appLogo"
           />
@@ -45,7 +22,7 @@ export default function About() {
             className="mx-3"
             style={{
               width: "80px",
-              display: myStyle.color === "white" ? "" : "none",
+              display:props.mode === "dark" ? "" : "none",
             }}
             alt="appLogo"
           />
@@ -58,16 +35,6 @@ export default function About() {
           get all the required actions performed here in one place .Change to uppercase , lowercase , copy to clipboard and many more features you will be getting benifitted with here.
         </p>
 
-        <button className="btn btn-outline-dark">
-          <a
-            rel="noreferrer"
-            target="_blank"
-            style={{ color: "orange", textDecoration: "none" }}
-            href="https://github.com/Vivek3072"
-          >
-           View Github Profile
-          </a>
-        </button>
 
         <br />
         <hr />
@@ -94,9 +61,8 @@ export default function About() {
         <hr />
       </div>
       <div className="mx-3 my-3">
-        <button onClick={handleDark} className="btn btn-dark mx-2">
-          {darkBtn}
-        </button>
+        <button className="btn btn-primary mx-2">
+         <a style={{color:"white" , textDecoration:"none"}} href="https://github.com/Vivek3072"> View github Profile </a></button>
       </div>
     </>
   );

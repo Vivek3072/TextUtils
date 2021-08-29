@@ -1,6 +1,6 @@
 .animeLogo {
   width: 150px;
-  animation: animateLogo 4s ease-in-out infinite alternate;
+  animation: animateLogo 3s ease-in-out infinite alternate;
 }
 
 @keyframes animateLogo {
@@ -8,7 +8,7 @@
     width: 25%;
   }
   to {
-    width: 45%;
+    width: 43%;
   }
 }
 
