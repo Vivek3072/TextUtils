@@ -26,7 +26,7 @@ function App() {
         <Route exact path="/">
           <TextForm mode={mode} />
         </Route>
-        <Route path="/TextUtils" component={TextForm} />
+
         <Route path="/About">
           <About mode={mode} />
         </Route>

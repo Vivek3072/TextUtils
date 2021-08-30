@@ -110,4 +110,6 @@ TextForm.propTypes = {
 };
 TextForm.defaultProps = {
   heading: "Your heading here!",
+ color : "black"
 };
+
