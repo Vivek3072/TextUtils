@@ -52,13 +52,13 @@ function App() {
         <Route exact path="/">
           <TextForm mode={mode}  handleAlert={handleAlert}/>
         </Route>
-        <Route exact path="/TextUtils">
+        <Route path="/TextUtils">
         <TextForm mode={mode}  handleAlert={handleAlert} />
         </Route>
-        <Route exact path="/About">
+        <Route path="/About">
           <About mode={mode} />
         </Route>
-        <Route exact path="/Contact">
+        <Route path="/Contact">
           <Contact mode={mode} />
         </Route>
       </Switch>
