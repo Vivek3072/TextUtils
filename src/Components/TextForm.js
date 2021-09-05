@@ -6,44 +6,42 @@ export default function TextForm(props) {
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
-  
+
   const handleUpClick = () => {
     let newText1 = text.toUpperCase();
     setText(newText1);
-    props.handleAlert("Converted to UpperCase :D ","success");
-    
+    props.handleAlert("Converted to UpperCase :D ", "success");
   };
   const handleLowClick = () => {
     let newText2 = text.toLowerCase();
     setText(newText2);
-    props.handleAlert("Converted to LowerCase :D ","success");
+    props.handleAlert("Converted to LowerCase :D ", "success");
   };
   const handleClear = () => {
     let newText = "";
     setText(newText);
-    props.handleAlert("Text was cleared :-O","success");
+    props.handleAlert("Text was cleared :-O", "success");
   };
   const handleCopy = () => {
-    var text = document.getElementById("mybox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    props.handleAlert("Text copied to clipboard :D","success");
+    navigator.clipboard.writeText(text);
+    props.handleAlert("Text copied to clipboard :D", "success");
   };
-  
+
   const handleExtraSpaces = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
-    props.handleAlert("Extra Spaces removed :D","success");
+    props.handleAlert("Extra Spaces removed :D", "success");
   };
 
-  // const handleTitleCase = () => {
-  //   var words = text.toLowerCase().split(" ");
-  //   for (var i = 0; i < words.length; i++) {
-  //     words[i] = words[i][0].toUpperCase() + words[i].slice(1);
-  //   }
-  //   setText(words.join(" "));
-  // };
-  
+  const handleTitleCase = () => {
+    var words = text.toLowerCase().split(" ");
+    for (var i = 0; i < words.length; i++) {
+      words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+    }
+    setText(words.join(" "));
+    props.handleAlert("Converted to Title Case Text :D", "success");
+  };
+
   return (
     <>
       <div className="container my-3">
@@ -80,9 +78,9 @@ export default function TextForm(props) {
         >
           Remove Extra Spaces
         </button>
-        {/* <button className="btn btn-primary mx-1 my-1" onClick={handleTitleCase}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleTitleCase}>
           Title Case
-        </button> */}
+        </button>
         <button className="btn btn-danger my-1 mx-1" onClick={handleClear}>
           Clear Text
         </button>
@@ -94,12 +92,27 @@ export default function TextForm(props) {
       >
         <h2>Your Text Summmary</h2>
         <p>
-          <b> {text.split(" ").length} </b> word(s) and <b> {text.length} </b>
+          <b>
+            {" "}
+            {
+              text.split(/\s+/).filter((element) => {
+                return element.length !== 0;
+              }).length
+            }{" "}
+          </b>{" "}
+          word(s) and <b> {text.length} </b>
           characters
         </p>
         <p>
-          It will take <b> {0.008 * text.split(" ").length} </b> minute(s) to
-          read.
+          It will take{" "}
+          <b>
+            {" "}
+            {0.008 *
+              text.split(/\s+/).filter((element) => {
+                return element.length !== 0;
+              }).length}{" "}
+          </b>{" "}
+          minute(s) to read.
         </p>
 
         <h3> Preview</h3>
@@ -116,6 +129,5 @@ TextForm.propTypes = {
 };
 TextForm.defaultProps = {
   heading: "Your heading here!",
- color : "black"
+  color: "black",
 };
-

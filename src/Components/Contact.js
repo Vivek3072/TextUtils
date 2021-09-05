@@ -69,16 +69,6 @@ export default function Contact(props) {
                 required
                 autoComplete="off"
               />
-              {/* 
-              <select
-                className={ `form-select  bg-${props.mode==="dark"?"dark" : "white"} text-${props.mode==="light"?"dark" : "light" }`}
-                aria-label="Default select example"
-              >
-                <option >Subject *</option>
-                <option value="1">Post a review!</option>
-                <option value="2">Have a suggestion!</option>
-                <option value="3">Report bugs!</option>
-              </select> */}
 
               <div className="mb-3">
                 <textarea

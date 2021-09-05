@@ -6,7 +6,7 @@ export default function About(props) {
 
   return (
     <>
-      <div className= {`container-fluid my-4 text-${props.mode === "light" ? "dark" : "white"}`}>
+      <div className= {`container border my-4 text-${props.mode === "light" ? "dark" : "white"}`} style={{borderRadius:"10px" , padding:"10px 10px"}} >
         <h1>
           <img
             src={darkLogo}
@@ -30,11 +30,10 @@ export default function About(props) {
         </h1>
         <p>
           I'm working my best to provide you best feature at a single spot. with
-          good design , easy to understand and use here is you TextUtils app.
+          good design , easy to understand here is you TextUtils app.
           Now play with your characters , letters, sentences , paragraphs and
-          get all the required actions performed here in one place .Change to uppercase , lowercase , copy to clipboard and many more features you will be getting benifitted with here.
+          get all the required actions performed here in one place .Change to uppercase , lowercase , copy to clipboard and many more features you will be getting benifitted with here. Explore with so many custom background colors in both dark and light modes.
         </p>
-
 
         <br />
         <hr />
@@ -59,10 +58,10 @@ export default function About(props) {
           </li>
         </ol>
         <hr />
-      </div>
       <div className="mx-3 my-3">
         <button className="btn btn-primary mx-2">
          <a style={{color:"white" , textDecoration:"none"}} href="https://github.com/Vivek3072"> View github Profile </a></button>
+      </div>
       </div>
     </>
   );
