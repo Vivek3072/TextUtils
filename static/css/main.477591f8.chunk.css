@@ -1,2 +1,0 @@
-.animeLogo{width:150px;-webkit-animation:animateLogo 3s ease-in-out infinite alternate;animation:animateLogo 3s ease-in-out infinite alternate}@-webkit-keyframes animateLogo{0%{width:25%}to{width:43%}}@keyframes animateLogo{0%{width:25%}to{width:43%}}.contactLeft{height:28vh}@media only screen and (min-width:375px){.contactLeft{display:"flex";justify-content:"center";align-items:"center";padding:10px 0}}
-/*# sourceMappingURL=main.477591f8.chunk.css.map */
