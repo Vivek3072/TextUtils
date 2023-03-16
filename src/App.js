@@ -8,7 +8,7 @@ import Contact from "./Components/Contact";
 import Alert from "./Components/Alert";
 
 function App() {
-  const [mode, setMode] = useState("light");
+  const [mode, setMode] = useState("dark");
   const handleMode = () => {
     if (mode === "light") {
       setMode("dark");
